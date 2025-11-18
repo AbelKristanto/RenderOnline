@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import pickle
 import plotly.express as px
-import os
 
 st.set_page_config(page_title="Model Checker", layout="wide")
 st.title("🔍 Model Prediction Checker")
