@@ -7,7 +7,12 @@ st.set_page_config(page_title="Model Checker", layout="wide")
 st.title("🔍 Model Prediction Checker")
 st.write("Simple Streamlit app to test your saved model (.pkl) interactively and interpret results easily.")
 
+def load_model(path):
+    with open(path, "rb") as f:
+        return pickle.load(f)
+        
 model_path = "rf_iris_py58.pkl"
+
 model = load_model(model_path)
 st.success(f"✅ Model berhasil dimuat: `{model.__class__.__name__}`")
 
