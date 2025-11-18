@@ -8,17 +8,7 @@ st.set_page_config(page_title="Model Checker", layout="wide")
 st.title("🔍 Model Prediction Checker")
 st.write("Simple Streamlit app to test your saved model (.pkl) interactively and interpret results easily.")
 
-@st.cache_resource
-def load_model(path):
-    with open(path, "rb") as f:
-        return pickle.load(f)
-
 model_path = "rf_iris_py58.pkl"
-
-if not os.path.exists(model_path):
-    st.error(f"❌ File '{model_path}' tidak ditemukan. Pastikan file ada di folder yang sama.")
-    st.stop()
-
 model = load_model(model_path)
 st.success(f"✅ Model berhasil dimuat: `{model.__class__.__name__}`")
 
